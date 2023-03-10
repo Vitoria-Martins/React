@@ -49,27 +49,52 @@ export default App; */
 
 //COMPNENTE CLASS
 
-import React, { Component} from 'react';
+import React, { Component } from "react";
 
 //cria o component
-class Equipe extends Component{
+class Equipe extends Component {
   //render renderiza para ver na tela
-  render(){
-         return(
-              <div>
-
-                <h2>Olá sou a {this.props.nome}</h2>
-                <h2> Profissão: {this.props.cargo}</h2>
-     </div>  //this faz referencia ao componete clas
-         );
+  render() {
+    return (
+      <>
+        <Sobre
+          nome={this.props.nome}
+          cargo={this.props.cargo}
+          idade={this.props.idade}
+        />
+      </>
+    );
   }
 }
-function App(){
-  return(
+
+class Sobre extends Component {
+  //render renderiza para ver na tela
+  render() {
+    return (
+      <div>
+        <h2>Olá sou a {this.props.nome}</h2>
+        <h2> Profissão: {this.props.cargo}</h2>
+        <h2> Idade: {this.props.idade} Anos</h2>
+      </div> //this faz referencia ao componete clas
+    );
+  }
+}
+function App() {
+  return (
     <div>
       <h1>Conheça nossa equipe:</h1>
-      <Equipe nome ="Vitoria "
-      cargo = "Programadora"/>
+      <Equipe
+        nome="Vitoria "
+        cargo="Programadora"
+        idade="19"
+      />
+
+      <h1>Conheça nossa equipe:</h1>
+      <Equipe
+        nome="Veronica "
+        cargo="Designer"
+        idade=""
+      />
     </div>
     //aqui chama o component
   );
