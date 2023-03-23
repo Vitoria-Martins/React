@@ -1,61 +1,72 @@
-//PRATICANDO FORMULARIOS
+//PEOJETO CRONOMETRO
 
+/* eslint-disable no-undef */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
+import "./cronometro/style.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nome: "",
-      email: "",
-      senha: "",
-      error: "",
+      numero: 0,
+      botao: "VAI",
     };
-    this.cadastrar = this.cadastrar.bind(this);
+    this.timer = null;
+    this.vai = this.vai.bind(this);
+    this.limpar = this.limpar.bind(this);
   }
 
-  cadastrar(event) {
-    const { nome, email, senha } = this.state;
-
-    if (nome !== "" && email !== "" && senha !== "") {
-      alert(`Nome: ${nome} \n Email: ${email} \n Senha: ${senha}`);
+  vai() {
+    if (this.timer !== null) {
+      clearInterval(this.timer);
+      this.timer = null;
     } else {
-      this.setState({ error: "Ops parece que esta faltando algo!" });
+      this.timer = setInterval(() => {
+        let state = this.state;
+        state.numero += 0.1;
+        this.setState(state);
+      }, 100);
+      state.botao = "PAUSAR";
     }
-    //n atualiza pg ao clicar enter(p n perde os dados)
-    event.preventDefault();
+    this.setState(state);
+  }
+
+  limpar() {
+    if (this.timer !== null) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+    let state = this.state;
+    state.numero = 0;
+    state.botao = "VAI";
+    this.setState(state);
   }
 
   render() {
     return (
-      <div>
-        <h1>Novo usuario</h1>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.cadastrar}>
-          <label>Nome: </label>
-          <input
-            type="text"
-            value={this.state.nome}
-            onChange={(e) => this.setState({ nome: e.target.value })}
+      <>
+        <div className="container">
+          <img
+            src={require("./cronometro/cronometro.png")}
+            className="img"
           />
-          <br /> <br />
-          <label>Email: </label>
-          <input
-            type="email"
-            value={this.state.email}
-            onChange={(e) => this.setState({ email: e.target.value })}
-          />{" "}
-          <br />
-          <br />
-          <label>Senha: </label>
-          <input
-            type="password"
-            value={this.state.senha}
-            onChange={(e) => this.setState({ senha: e.target.value })}
-          />
-          <button type="submit">Cadastrar</button>
-        </form>
-      </div>
+          <a className="timer">{this.state.numero.toFixed(1)}</a>
+        </div>
+        <div className="areaBtn">
+          <a
+            className="botao"
+            onClick={this.vai}>
+            {this.state.botao}
+          </a>
+          <a
+            className="botao"
+            onClick={this.limpar}>
+            LIMPAR
+          </a>
+        </div>
+      </>
     );
   }
 }
