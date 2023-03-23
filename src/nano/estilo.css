@@ -1,0 +1,51 @@
+body {
+}
+main > h1 {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+main {
+  margin: 100px;
+}
+
+#banner > img {
+  width: 100%;
+  margin: auto;
+  border-radius: 30px;
+}
+#imagens {
+  position: relative;
+  padding: 20px;
+  opacity: 0.8;
+}
+
+#imagens > #p1 {
+  width: 140px;
+  height: 130px;
+  border-radius: 20px;
+}
+#imagens > #iM {
+  width: 170px;
+  height: 130px;
+  border-radius: 20px;
+}
+#texto {
+  font-size: 8px;
+  color: black;
+}
+#texto > #t1 {
+  position: absolute;
+  top: 63%;
+  left: 18%;
+}
+#texto > #t2 {
+  position: absolute;
+  top: 63%;
+  left: 38%;
+}
+#texto > #t3 {
+  position: absolute;
+  top: 63%;
+  left: 60%;
+}
