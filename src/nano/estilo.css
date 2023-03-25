@@ -8,44 +8,51 @@ main > h1 {
 main {
   margin: 100px;
 }
-
+#banner {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* centraliza verticalmente */
+}
 #banner > img {
-  width: 100%;
-  margin: auto;
+  width: 40%;
   border-radius: 30px;
+  align-items: center;
 }
 #imagens {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   opacity: 0.8;
+  position: relative;
 }
 
 #imagens > #p1 {
-  width: 140px;
+  position: relative;
+  padding: 5px;
+  width: 12%;
   height: 130px;
   border-radius: 20px;
 }
 #imagens > #iM {
-  width: 170px;
+  padding: 5px;
+  width: 15%;
   height: 130px;
   border-radius: 20px;
 }
 #texto {
-  font-size: 8px;
-  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 9px;
+  position: absolute;
 }
 #texto > #t1 {
-  position: absolute;
-  top: 63%;
-  left: 18%;
+  transform: translate(-175%, 400%);
 }
 #texto > #t2 {
-  position: absolute;
-  top: 63%;
-  left: 38%;
+  transform: translate(-65%, 250%);
 }
 #texto > #t3 {
-  position: absolute;
-  top: 63%;
-  left: 60%;
+  transform: translate(60%, 100%);
 }
