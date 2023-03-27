@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+main {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.293);
+  width: 100%;
+  max-width: 600px;
+  padding: 50px;
+  border-radius: 5px;
+}
+main > h1 {
+  color: rgb(62, 62, 117);
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 25px;
+}
+.barraPesquisa {
+  display: flex;
+  justify-content: center;
+}
+.barraP {
+  width: 300px;
+  padding: 5px;
+  border-color: blue;
+}
+.btn {
+  background-color: rgba(0, 98, 255, 0.316);
+  border-radius: 5px;
+  margin: 0;
+  border: none;
+}
