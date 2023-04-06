@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Compras</title>
+    <link
+      rel="stylesheet"
+      href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <h1>Lista de Compras</h1>
+
+        <form class="barraPesquisa">
+          <input
+            type="text"
+            class="barraP"
+            id="myInput"
+            placeholder="Adicione Item..." />
+          <button
+            onclick="addToList()"
+            type="submit"
+            class="btn">
+            Adicionar
+          </button>
+
+          <ul id="mylist"></ul>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
